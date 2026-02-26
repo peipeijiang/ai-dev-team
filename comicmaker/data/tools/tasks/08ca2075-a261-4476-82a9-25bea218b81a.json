@@ -1,0 +1,74 @@
+{
+  "task_id": "08ca2075-a261-4476-82a9-25bea218b81a",
+  "tool_type": "text_to_image",
+  "status": "success",
+  "input": {
+    "prompt": " **主角狗：波比**\r\n   - 外貌：波比是一只中型金毛犬，毛色金黄，眼神温柔，尾巴总是轻轻摇摆。\r\n   - 性格：温顺、憨厚，热爱生活的小乐天派，对世界充满好奇和爱。\r\n   - 背景：被一户和善的家庭收养，从小在温暖的环境中长大。",
+    "material_type": "人物",
+    "model": "nanopro",
+    "aspect_ratio": "16:9",
+    "resolution": "1k"
+  },
+  "output": {
+    "image_path": "/Users/shane/Downloads/comicmaker-main/data/tools/outputs/text_to_image/2fd5d343-7836-4a7a-a0b4-9a6b4e3ee454/image.jpg",
+    "url": "/data/tools/outputs/text_to_image/2fd5d343-7836-4a7a-a0b4-9a6b4e3ee454/image.jpg",
+    "prompt": {
+      "user_message": " **主角狗：波比**\r\n   - 外貌：波比是一只中型金毛犬，毛色金黄，眼神温柔，尾巴总是轻轻摇摆。\r\n   - 性格：温顺、憨厚，热爱生活的小乐天派，对世界充满好奇和爱。\r\n   - 背景：被一户和善的家庭收养，从小在温暖的环境中长大。"
+    },
+    "api_request": {
+      "url": "https://api.wavespeed.ai/api/v3/google/nano-banana-pro/text-to-image",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ***"
+      },
+      "payload": {
+        "prompt": " **主角狗：波比**\r\n   - 外貌：波比是一只中型金毛犬，毛色金黄，眼神温柔，尾巴总是轻轻摇摆。\r\n   - 性格：温顺、憨厚，热爱生活的小乐天派，对世界充满好奇和爱。\r\n   - 背景：被一户和善的家庭收养，从小在温暖的环境中长大。",
+        "aspect_ratio": "16:9",
+        "resolution": "1k",
+        "seed": 1772015556
+      }
+    },
+    "api_response": {
+      "code": 200,
+      "message": "success",
+      "data": {
+        "id": "87c242f67176476283c8930b6eb47615",
+        "model": "google/nano-banana-pro/text-to-image",
+        "outputs": [
+          "https://d2p7pge43lyniu.cloudfront.net/output/b10b8654-63b1-4ff1-b77e-a1429a51ff59.png"
+        ],
+        "urls": {
+          "get": "https://api.wavespeed.ai/api/v3/predictions/87c242f67176476283c8930b6eb47615/result"
+        },
+        "status": "completed",
+        "created_at": "2026-02-25T10:14:56.331810013Z",
+        "code": 0,
+        "error": "",
+        "executionTime": 1056759,
+        "timings": {
+          "inference": 1056759
+        }
+      }
+    }
+  },
+  "error": null,
+  "progress": 0,
+  "created_at": "2026-02-25T18:14:55.035735",
+  "updated_at": "2026-02-25T18:32:36.901708",
+  "api_request": {
+    "url": "https://api.wavespeed.ai/api/v3/google/nano-banana-pro/text-to-image",
+    "method": "POST",
+    "headers": {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer ***"
+    },
+    "payload": {
+      "prompt": " **主角狗：波比**\r\n   - 外貌：波比是一只中型金毛犬，毛色金黄，眼神温柔，尾巴总是轻轻摇摆。\r\n   - 性格：温顺、憨厚，热爱生活的小乐天派，对世界充满好奇和爱。\r\n   - 背景：被一户和善的家庭收养，从小在温暖的环境中长大。",
+      "aspect_ratio": "16:9",
+      "resolution": "1k",
+      "seed": 1772015556
+    }
+  },
+  "prompt": " **主角狗：波比**\r\n   - 外貌：波比是一只中型金毛犬，毛色金黄，眼神温柔，尾巴总是轻轻摇摆。\r\n   - 性格：温顺、憨厚，热爱生活的小乐天派，对世界充满好奇和爱。\r\n   - 背景：被一户和善的家庭收养，从小在温暖的环境中长大。"
+}

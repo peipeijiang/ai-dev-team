@@ -1,0 +1,13 @@
+{
+  "task_id": "25076e5a-3d29-4209-be7b-fe9e2bbbcc15",
+  "tool_type": "generate_script",
+  "status": "failed",
+  "input": {
+    "description": "帮我生成一直狗在狗窝享受的剧本"
+  },
+  "output": null,
+  "error": "OpenRouter API 错误: {'error': {'message': 'Failed to authenticate request with Clerk', 'code': 502}}",
+  "progress": 0,
+  "created_at": "2026-02-14T10:22:04.636209",
+  "updated_at": "2026-02-14T10:22:05.273174"
+}

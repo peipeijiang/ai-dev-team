@@ -1,0 +1,147 @@
+:root {
+  /* 未来感配色方案 */
+  --bg-color: #0f172a; /* 深蓝背景 */
+  --bg-secondary: #1e293b; /* 二级背景 */
+  --bg-glass: rgba(30, 41, 59, 0.7); /* 玻璃背景 */
+  --text-primary: #e2e8f0; /* 主要文字 */
+  --text-secondary: #94a3b8; /* 次要文字 */
+  --accent-color: #38bdf8; /* 亮蓝强调色 */
+  --accent-glow: 0 0 10px rgba(56, 189, 248, 0.5); /* 强调发光 */
+  --border-color: rgba(148, 163, 184, 0.2); /* 边框 */
+  
+  /* Element Plus 覆盖变量 */
+  --el-color-primary: var(--accent-color);
+  --el-color-primary-light-3: #7dd3fc;
+  --el-bg-color: var(--bg-color);
+  --el-bg-color-overlay: var(--bg-secondary);
+  --el-text-color-primary: var(--text-primary);
+  --el-text-color-regular: var(--text-secondary);
+  --el-border-color: var(--border-color);
+  --el-border-color-light: rgba(148, 163, 184, 0.1);
+  --el-fill-color-blank: var(--bg-secondary);
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-image: 
+    radial-gradient(at 0% 0%, rgba(56, 189, 248, 0.1) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+/* 通用卡片样式 - 玻璃拟态 */
+.el-card {
+  background: var(--bg-glass) !important;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-color) !important;
+  color: var(--text-primary);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 导航栏样式覆盖 */
+.navbar {
+  background: rgba(15, 23, 42, 0.8) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-link {
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link.router-link-active {
+  color: var(--accent-color);
+  text-shadow: var(--accent-glow);
+}
+
+/* 按钮样式增强 */
+.el-button--primary {
+  background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+  border: none;
+  box-shadow: 0 4px 6px -1px rgba(14, 165, 233, 0.3);
+}
+.el-button--primary:hover {
+  background: linear-gradient(135deg, #0284c7, #0ea5e9);
+  box-shadow: 0 6px 12px -2px rgba(14, 165, 233, 0.5);
+  transform: translateY(-1px);
+}
+
+/* 输入框样式 */
+.el-input__wrapper, .el-textarea__inner {
+  background-color: rgba(30, 41, 59, 0.5) !important;
+  box-shadow: 0 0 0 1px var(--border-color) inset !important;
+}
+.el-input__wrapper:hover, .el-textarea__inner:hover {
+  box-shadow: 0 0 0 1px var(--accent-color) inset !important;
+}
+.el-input__inner {
+  color: var(--text-primary) !important;
+}
+
+/* 侧边栏样式 */
+.tools-sidebar, .history-sidebar {
+  background: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(5px);
+  border-color: var(--border-color) !important;
+}
+
+.el-menu {
+  background: transparent !important;
+  border-right: none !important;
+}
+.el-menu-item {
+  color: var(--text-secondary) !important;
+}
+.el-menu-item:hover, .el-menu-item.is-active {
+  background: rgba(56, 189, 248, 0.1) !important;
+  color: var(--accent-color) !important;
+  border-right: 3px solid var(--accent-color);
+}
+
+/* 标题样式 */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+}
+
+/* 图标发光 */
+.tool-icon {
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+}
+
+/* 进度条 */
+.el-progress-circle__track {
+  stroke: #334155 !important;
+}
+
+/* 弹窗样式 */
+.el-dialog {
+  background: #1e293b !important;
+  border: 1px solid var(--border-color);
+}
+.el-dialog__title {
+  color: var(--text-primary) !important;
+}

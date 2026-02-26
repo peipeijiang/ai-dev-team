@@ -1,0 +1,10 @@
+{
+  "name": "狗窝",
+  "description": "温暖的狗窝",
+  "main_image": "main.jpg",
+  "aux_images": [
+    "aux1.jpg",
+    "aux2.jpg"
+  ],
+  "voice_settings": null
+}

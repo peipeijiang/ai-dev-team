@@ -1,0 +1,17 @@
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+python-multipart==0.0.6
+pytest==7.4.3
+httpx==0.25.2
+pytest-asyncio==0.21.1
+Pillow==10.1.0
+requests==2.31.0
+PyYAML==6.0.1
+opencv-python-headless==4.8.1.78
+oss2>=2.15.0
+librosa>=0.10.0
+soundfile>=0.12.1
+moviepy==1.0.3
+imageio>=2.31.0
+natsort>=8.4.0
+numpy>=1.24.0

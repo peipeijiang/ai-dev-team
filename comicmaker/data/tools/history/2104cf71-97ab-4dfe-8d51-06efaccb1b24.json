@@ -1,0 +1,55 @@
+{
+  "record_id": "2104cf71-97ab-4dfe-8d51-06efaccb1b24",
+  "task_id": "86198546-4d62-4321-9ad5-4f3b6c630aac",
+  "tool_type": "text_to_image",
+  "input": {
+    "prompt": "**主角狗：波比**\r\n   - 外貌：波比是一只中型金毛犬，毛色金黄，眼神温柔，尾巴总是轻轻摇摆。\r\n   - 性格：温顺、憨厚，热爱生活的小乐天派，对世界充满好奇和爱。\r\n   - 背景：被一户和善的家庭收养，从小在温暖的环境中长大。",
+    "material_type": "人物",
+    "model": "wan2.6",
+    "aspect_ratio": "16:9",
+    "resolution": "1k"
+  },
+  "output": {
+    "image_path": "/Users/shane/Downloads/comicmaker-main/data/tools/outputs/text_to_image/fc1f4fe9-88a1-4aff-8fe9-8dd42e6848d7/image.jpg",
+    "url": "/data/tools/outputs/text_to_image/fc1f4fe9-88a1-4aff-8fe9-8dd42e6848d7/image.jpg",
+    "prompt": {
+      "user_message": "**主角狗：波比**\r\n   - 外貌：波比是一只中型金毛犬，毛色金黄，眼神温柔，尾巴总是轻轻摇摆。\r\n   - 性格：温顺、憨厚，热爱生活的小乐天派，对世界充满好奇和爱。\r\n   - 背景：被一户和善的家庭收养，从小在温暖的环境中长大。"
+    },
+    "api_request": {
+      "url": "https://api.wavespeed.ai/api/v3/alibaba/wan-2.6/text-to-image",
+      "method": "POST",
+      "headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer ***"
+      },
+      "payload": {
+        "prompt": "**主角狗：波比**\r\n   - 外貌：波比是一只中型金毛犬，毛色金黄，眼神温柔，尾巴总是轻轻摇摆。\r\n   - 性格：温顺、憨厚，热爱生活的小乐天派，对世界充满好奇和爱。\r\n   - 背景：被一户和善的家庭收养，从小在温暖的环境中长大。",
+        "size": "1365*768",
+        "seed": 1772014882
+      }
+    },
+    "api_response": {
+      "code": 200,
+      "message": "success",
+      "data": {
+        "id": "21060afa61cb4493a1781cdcd6f2d7d1",
+        "model": "alibaba/wan-2.6/text-to-image",
+        "outputs": [
+          "https://d1q70pf5vjeyhc.cloudfront.net/predictions/21060afa61cb4493a1781cdcd6f2d7d1/1.png"
+        ],
+        "urls": {
+          "get": "https://api.wavespeed.ai/api/v3/predictions/21060afa61cb4493a1781cdcd6f2d7d1/result"
+        },
+        "status": "completed",
+        "created_at": "2026-02-25T10:21:10.078282483Z",
+        "code": 0,
+        "error": "",
+        "executionTime": 7177,
+        "timings": {
+          "inference": 7177
+        }
+      }
+    }
+  },
+  "created_at": "2026-02-25T18:21:22.779622"
+}

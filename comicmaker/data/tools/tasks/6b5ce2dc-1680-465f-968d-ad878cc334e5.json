@@ -1,0 +1,19 @@
+{
+  "task_id": "6b5ce2dc-1680-465f-968d-ad878cc334e5",
+  "tool_type": "image_to_image",
+  "status": "failed",
+  "input": {
+    "prompt": "重点还原狗窝的样子",
+    "image_paths": [
+      "/Users/shane/Downloads/comicmaker-main/data/tools/outputs/uploads/d0cbecaf-3355-486e-b003-934d995a1012/image_0.jpg"
+    ],
+    "model": "wan2.6",
+    "aspect_ratio": "16:9",
+    "resolution": "1k"
+  },
+  "output": null,
+  "error": "上传图片到 OSS 失败: 无法加载 OSS 配置，请提供完整的参数或配置 config.yaml: \"配置文件中缺少 'oss.access_key_id' 配置\"",
+  "progress": 0,
+  "created_at": "2026-02-25T18:23:36.206904",
+  "updated_at": "2026-02-25T18:23:36.359173"
+}
