@@ -98,6 +98,9 @@
             <el-option label="道具" value="props" />
           </el-select>
         </el-form-item>
+        <el-form-item label="素材描述">
+          <el-input v-model="uploadForm.description" type="textarea" placeholder="请输入素材描述" :rows="3" />
+        </el-form-item>
         <el-form-item label="上传文件">
           <el-upload
             ref="uploadRef"
@@ -144,6 +147,7 @@ import { ref, reactive, onMounted } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import { Upload, Search, Picture, MoreFilled, UploadFilled } from '@element-plus/icons-vue'
 import type { UploadFile } from 'element-plus'
+import axios from 'axios'
 
 const loading = ref(false)
 const materialsList = ref<any[]>([])
@@ -159,7 +163,8 @@ const uploading = ref(false)
 const uploadFileList = ref<UploadFile[]>([])
 const uploadForm = reactive({
   name: '',
-  category: 'characters'
+  category: 'characters',
+  description: ''
 })
 
 const previewDialogVisible = ref(false)
@@ -190,15 +195,22 @@ const formatDate = (date: string) => {
 const loadMaterials = async () => {
   loading.value = true
   try {
-    // 模拟数据
-    materialsList.value = [
-      { id: '1', name: '角色1', category: 'characters', thumbnail: '', created_at: new Date().toISOString() },
-      { id: '2', name: '背景1', category: 'backgrounds', thumbnail: '', created_at: new Date().toISOString() },
-      { id: '3', name: '道具1', category: 'props', thumbnail: '', created_at: new Date().toISOString() }
-    ]
+    // material_type: characters, scenes, props
+    const materialTypeMap: Record<string, string> = {
+      'all': 'characters',
+      'characters': 'characters',
+      'backgrounds': 'scenes',
+      'props': 'props'
+    }
+    const materialType = materialTypeMap[activeCategory.value] || 'characters'
+    
+    const response = await fetch(`/api/materials/${materialType}`)
+    const data = await response.json()
+    materialsList.value = data.materials || []
     total.value = materialsList.value.length
   } catch (error) {
     console.error('加载失败:', error)
+    materialsList.value = []
   } finally {
     loading.value = false
   }
@@ -221,6 +233,7 @@ const handlePageChange = () => {
 const handleUpload = () => {
   uploadForm.name = ''
   uploadForm.category = 'characters'
+  uploadForm.description = ''
   uploadFileList.value = []
   uploadDialogVisible.value = true
 }
@@ -236,14 +249,37 @@ const handleSubmitUpload = async () => {
     ElMessage.warning('请选择要上传的文件')
     return
   }
+  if (!uploadForm.name) {
+    ElMessage.warning('请输入素材名称')
+    return
+  }
+  
   uploading.value = true
   try {
-    // await materialsApi.upload(formData)
+    const formData = new FormData()
+    formData.append('name', uploadForm.name)
+    formData.append('description', uploadForm.description || '')
+    formData.append('main_image', uploadFileList.value[0].raw)
+    
+    const materialTypeMap: Record<string, string> = {
+      'characters': 'characters',
+      'backgrounds': 'scenes',
+      'props': 'props'
+    }
+    const materialType = materialTypeMap[uploadForm.category] || 'characters'
+    
+    const baseUrl = window.location.port === '3000' ? 'http://localhost:8000' : '/api'
+    await axios.post(`${baseUrl}/api/materials/${materialType}`, formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    
     ElMessage.success('上传成功')
-    uploadDialogVisible.value = false
     loadMaterials()
-  } catch (error) {
+  } catch (error: any) {
     console.error('上传失败:', error)
+    ElMessage.error('上传失败: ' + (error.response?.data?.detail || error.message))
   } finally {
     uploading.value = false
   }
